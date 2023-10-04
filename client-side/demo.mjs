@@ -12,7 +12,7 @@ import { waitForInput } from './waitforinput.mjs';
 // Pass the URL of your Ceramic server
 // Pass reference to your compiled composite
 
-const CERAMIC_URL = 'https://ceramic-temp.hirenodes.io'
+const CERAMIC_URL = process.env.CERAMIC_URL;
 
 const compose = new ComposeClient({ ceramic: CERAMIC_URL, definition })
 
