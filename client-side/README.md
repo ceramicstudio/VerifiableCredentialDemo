@@ -8,7 +8,9 @@ create a file called `admin_seed.txt` with a valid credential for the ceramic no
 
 Modify and run 
 
-```node write-static.mjs``` 
+```
+node write-static.mjs
+``` 
 
 to insert some composedb model instances.
 
