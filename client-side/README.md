@@ -6,7 +6,7 @@ create a file called `admin_seed.txt` with a valid credential for the ceramic no
 
 `npm install`
 
-Modify and run 
+Add some data: modify and run 
 
 ```
 node write-static.mjs
