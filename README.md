@@ -18,13 +18,23 @@ For these reasons, a transformation of the raw graphql is necessary, and possibl
 
 An npm library may be provided for transforming the query results back into a valid signed verifiable credential.
 
+
 ## Server-side transformation
 
-The server may provide resolvers to transform the query results before returning them to the client.  This will require changes on the js-ceramic side, and may be implemented as Interfaces.
+The server may provide a custom non-graphql endpoint before returning them to the client.  This will require changes on the js-ceramic side, and may be implemented in the future.
 
+Resolvers can replace fields using graphql, but we would still run into the problem of the incompatible fields
 See https://www.apollographql.com/docs/apollo-server/data/resolvers/
 
 Examples of both approachers are contained in this repo.
+
+## Schema choices
+
+Because ComposeDB supports indexing on the primary fields of a model rather than the subtypes, we have chosen relational models with one for the core fields about the attestation, and one for the fields required to reassemble into a valid Verifiable Credential.  Note that we may implement this same pattern for Ethereum Attestation Service objects.
+
+We have further choices to follow tightly the exact verifiable credential fields, or assume that some logic may transform them and leave out any static ones to be added by the transformer.
+
+The two approaches can be seen under [./schemas](./schemas)
 
 ## Validation
 
