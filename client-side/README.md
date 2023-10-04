@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-create a file called admin_seed.txt with a valid credential for the ceramic node (change the CERAMIC_URL as needed)
+create a file called `admin_seed.txt` with a valid credential for the ceramic node (change the CERAMIC_URL setting as needed)
 
 `npm install`
 
