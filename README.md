@@ -1,15 +1,35 @@
-# VerifiableCredentialDemo
+# Overview of approaches to storing Verifiable Credentials on Ceramic
 
-The intention is to build libraries to natively store Verifiable Credentials on ComposeDB, by saving the extra signature as a model field and reassembling the valid verifiable credential on the fly.
+## Model design
 
-The tool should
+Examples are included here of ComposeDB models that are as close as possible to a Verifiable Credential example.
 
- - accept a Verifiable Credential schema
- - build a compatible ComposeDB model
- - reassemble the VC out of the composedb document and validate it
+## Incompatibilities
 
-OR
+The specifications for graphql and verifiable credentials have some small incompatibilities:
+ - graphql does not allow fields starting with '@'
+ - graphql does not allow fields named "id"
 
- - from a ComposeDB model, add a sig field and generate a Verifiable Credential Schema that would be compatible
+Also, some verifiable credential formats include a large amount of boilerplate that it may be desireable not to store in each instance.
 
-The second might be easier since composedb models are a bit simpler
+For these reasons, a transformation of the raw graphql is necessary, and possibly desireable.  Two types of transformations are possible:
+
+## Client-side transformation
+
+An npm library may be provided for transforming the query results back into a valid signed verifiable credential.
+
+## Server-side transformation
+
+The server may provide resolvers to transform the query results before returning them to the client.  This will require changes on the js-ceramic side, and may be implemented as Interfaces.
+
+See https://www.apollographql.com/docs/apollo-server/data/resolvers/
+
+Examples of both approachers are contained in this repo.
+
+## Validation
+
+Some of the example code uses the Digital Bazaar libraries for validation.  Note that these may not perform strict checking. (see https://github.com/digitalbazaar/vc)
+
+independent validation may be performed at https://univerifier.io/
+
+

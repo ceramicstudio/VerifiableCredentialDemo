@@ -1,0 +1,65 @@
+{
+  "streamId": "kjzl6cwe1jw14apyax1t6breww6hhvgkk74yq3t6obajq9fxia4mxc6po3ypu6l",
+  "state": {
+    "type": 0,
+    "content": {
+      "type": [
+        "VerifiableCredential"
+      ],
+      "proof": {
+        "jws": "eyJhbGciOiJFZERTQSIsImNyaXQiOlsiYjY0Il0sImI2NCI6ZmFsc2V9..s3xWlz2WnX3Ih0eMVHFpXB7SEFx5SPouGXAbfcUSPMegFrmGaS58S4CdNzztzSB20j3MkPbcUVRagvlGNIJSBQ",
+        "type": "Ed25519Signature2018",
+        "created": "2022-07-23T05:17:53.747Z",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC#z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC"
+      },
+      "issuer": "did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC",
+      "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+      ],
+      "issuanceDate": "2022-07-23T05:17:53.746Z",
+      "expirationDate": "2022-10-21T05:17:53.746Z",
+      "credentialSubject": {
+        "id": "did:pkh:eip155:1:0x52905A5E83A83F6a9d0e64Ad24e79a37512D35B9",
+        "hash": "v0.0.0:s0jEKaXBJdfkziP2DDGVFPYcy+nIe6hS9yo3n1pIhRw=",
+        "@context": [
+          {
+            "hash": "https://schema.org/Text",
+            "provider": "https://schema.org/Text"
+          }
+        ],
+        "provider": "Brightid"
+      }
+    },
+    "metadata": {
+      "schema": "ceramic://k3y52l7qbv1frynp3s4v5z0a9wrolxl7kjmbvj19jl9mck442dbtbnwqes5irx3pc",
+      "unique": "C5eObgP7j7Tg41XK",
+      "controllers": [
+        "did:pkh:eip155:1:0x52905a5e83a83f6a9d0e64ad24e79a37512d35b9"
+      ]
+    },
+    "signature": 2,
+    "anchorStatus": "ANCHORED",
+    "log": [
+      {
+        "cid": "bagcqcera3kcwlq7nv6ovaswm36fwbl4f4dn5hxxaye67pvyhwcwzevnnomgq",
+        "type": 0,
+        "expirationTime": 1658639635,
+        "timestamp": 1658554474
+      },
+      {
+        "cid": "bafyreihzgmuw65vjffba366ps4wab6pblscp2a2mkyz55swfi5tfklioma",
+        "type": 2,
+        "timestamp": 1658554474
+      }
+    ],
+    "anchorProof": {
+      "root": "bafyreietrunrbqbvurgt6bca4jfilozh7vetd7rcqmkevxfsjabjsqiazy",
+      "txHash": "bagjqcgzaozitcigipdbq4v7jqiq5of26rhkq2dlh6ln43e26jfd2skz3irnq",
+      "chainId": "eip155:1",
+      "blockNumber": 15197078,
+      "blockTimestamp": 1658554474
+    },
+    "doctype": "tile"
+  }
+}
