@@ -1,0 +1,9 @@
+type GitcoinPassportStamp @createModel(
+  accountRelation: LIST
+  description: "A gitcoin passport stamp with a provider and hash"
+)
+{
+  _id: String! @string(minLength: 1, maxLength: 1024)
+  provider: String! @string(minLength: 1, maxLength: 1024)
+  hash: String! @string(minLength: 1, maxLength: 1024)
+}

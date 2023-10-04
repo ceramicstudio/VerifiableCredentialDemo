@@ -10,7 +10,7 @@ The specifications for graphql and verifiable credentials have some small incomp
  - graphql does not allow fields starting with '@'
  - graphql does not allow fields named "id"
 
-Also, some verifiable credential formats include a large amount of boilerplate that it may be desireable not to store in each instance.
+Also, some verifiable credential formats include a large amount of boilerplate that it may be desireable not to store in each instance.  Further, the verifiable credential spec may allow highly flexible field choices that may be hard to replicate in fixed models without further logic. 
 
 For these reasons, a transformation of the raw graphql is necessary, and possibly desireable.  Two types of transformations are possible:
 
