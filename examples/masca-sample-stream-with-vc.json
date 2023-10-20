@@ -1,163 +1,162 @@
 {
-  "streamId": "kjzl6cwe1jw14auc0z93s8llm5tt9d28wd4676s2qdv84trto16tg8n2rm5g2st",
+  "streamId": "k2t6wyfsu4pg2cc2wo593gkpv4lomgtoz1ehwpcrit9690nuqfh0s3pjerregt",
   "state": {
     "type": 0,
     "content": {
-      "$ref": "#/definitions/CeramicVCRecord",
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "definitions": {
-        "ProofType": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "string"
-            }
-          }
-        },
-        "CompactJWT": {
-          "type": "string"
-        },
-        "IssuerType": {
-          "anyOf": [
-            {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                }
-              }
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "CeramicVCRecord": {
-          "type": "object",
-          "required": [
-            "vcs"
+      "vcs": {
+        "d2c51046decd311bf944d3a161fc5b95fd5469ce94108817823de02bb57ab799": {
+          "type": [
+            "VerifiableCredential",
+            "MascaUserCredential"
           ],
-          "properties": {
-            "vcs": {
-              "type": "object",
-              "additionalProperties": {
-                "$ref": "#/definitions/W3CVerifiableCredential"
-              }
-            }
+          "proof": {
+            "type": "EthereumEip712Signature2021",
+            "eip712": {
+              "types": {
+                "Proof": [
+                  {
+                    "name": "created",
+                    "type": "string"
+                  },
+                  {
+                    "name": "proofPurpose",
+                    "type": "string"
+                  },
+                  {
+                    "name": "type",
+                    "type": "string"
+                  },
+                  {
+                    "name": "verificationMethod",
+                    "type": "string"
+                  }
+                ],
+                "EIP712Domain": [
+                  {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "version",
+                    "type": "string"
+                  },
+                  {
+                    "name": "chainId",
+                    "type": "uint256"
+                  }
+                ],
+                "CredentialSchema": [
+                  {
+                    "name": "id",
+                    "type": "string"
+                  },
+                  {
+                    "name": "type",
+                    "type": "string"
+                  }
+                ],
+                "CredentialSubject": [
+                  {
+                    "name": "id",
+                    "type": "string"
+                  },
+                  {
+                    "name": "type",
+                    "type": "string"
+                  }
+                ],
+                "VerifiableCredential": [
+                  {
+                    "name": "@context",
+                    "type": "string[]"
+                  },
+                  {
+                    "name": "credentialSchema",
+                    "type": "CredentialSchema"
+                  },
+                  {
+                    "name": "credentialSubject",
+                    "type": "CredentialSubject"
+                  },
+                  {
+                    "name": "issuanceDate",
+                    "type": "string"
+                  },
+                  {
+                    "name": "issuer",
+                    "type": "string"
+                  },
+                  {
+                    "name": "proof",
+                    "type": "Proof"
+                  },
+                  {
+                    "name": "type",
+                    "type": "string[]"
+                  }
+                ]
+              },
+              "domain": {
+                "name": "VerifiableCredential",
+                "chainId": 1,
+                "version": "1"
+              },
+              "primaryType": "VerifiableCredential"
+            },
+            "created": "2023-10-14T10:09:16.854Z",
+            "proofValue": "0x2e4d817708913100a2decb9b018f6613e6af78d80fa2c9393c32884aeb8b4e6612303e56b443cbc29376a7c37ca05780d89dee364ecb97ff236c4afd3bd200ec1b",
+            "proofPurpose": "assertionMethod",
+            "verificationMethod": "did:ethr:0x1:0x7c0d681098a9d46bd34637870c3afa4bfc9ec720#controller"
           },
-          "additionalProperties": false
-        },
-        "CredentialSubject": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            }
-          }
-        },
-        "VerifiableCredential": {
-          "type": "object",
-          "required": [
-            "@context",
-            "credentialSubject",
-            "issuanceDate",
-            "issuer",
-            "proof"
+          "issuer": "did:ethr:0x1:0x7c0d681098a9d46bd34637870c3afa4bfc9ec720",
+          "@context": [
+            "https://www.w3.org/2018/credentials/v1"
           ],
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "type": {
-              "anyOf": [
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "proof": {
-              "$ref": "#/definitions/ProofType"
-            },
-            "issuer": {
-              "$ref": "#/definitions/IssuerType"
-            },
-            "@context": {
-              "anyOf": [
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "issuanceDate": {
-              "type": "string"
-            },
-            "expirationDate": {
-              "type": "string"
-            },
-            "credentialStatus": {
-              "$ref": "#/definitions/CredentialStatusReference"
-            },
-            "credentialSubject": {
-              "$ref": "#/definitions/CredentialSubject"
-            }
-          }
-        },
-        "W3CVerifiableCredential": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/VerifiableCredential"
-            },
-            {
-              "$ref": "#/definitions/CompactJWT"
-            }
-          ]
-        },
-        "CredentialStatusReference": {
-          "type": "object",
-          "required": [
-            "id",
-            "type"
-          ],
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "type": {
-              "type": "string"
-            }
+          "issuanceDate": "2023-10-14T10:09:16.854Z",
+          "credentialSchema": {
+            "id": "https://beta.api.schemas.serto.id/v1/public/program-completion-certificate/1.0/json-schema.json",
+            "type": "JsonSchemaValidator2018"
+          },
+          "credentialSubject": {
+            "id": "did:ethr:0x1:0x7c0d681098a9d46bd34637870c3afa4bfc9ec720",
+            "type": "Regular User"
           }
         }
       }
     },
     "metadata": {
-      "unique": "q3kLk7FaCkG3B1kJ",
+      "family": "kjzl6cwe1jw147v1tf19hxyi1q5ix5s948cfm35xp55a2cngoux776kg3ypzj3p",
       "controllers": [
-        "did:key:z6MkkuZWy837eogPGBjYaVzn1WzP2iAGaHdqTAvyVkNQ98gH"
-      ]
+        "did:pkh:eip155:1:0x7c0d681098a9d46bd34637870c3afa4bfc9ec720"
+      ],
+      "schema": "ceramic://k3y52l7qbv1fryl3piyoqwt5lplg02kvza59o347nfmm1ubpuywghfhg3odiqbwu8"
     },
     "signature": 2,
-    "anchorStatus": "NOT_REQUESTED",
+    "anchorStatus": "ANCHORED",
     "log": [
       {
-        "cid": "bagcqcera35twusdfg2tjgplgcega7h7sosof6fxdyx4gcz24az4zj3hp34wq",
-        "type": 0
+        "cid": "bafyreihc5aeq6wlrvzvqj6hze6yvlq6m26ua65ujnbeioemeknc7cepe7u",
+        "type": 0,
+        "timestamp": 1697283299
+      },
+      {
+        "cid": "bagcqceralzbziwgdaee3ay2yjxuz6c3vrhn5tsr3u7ctfb7hggvbjfx73aka",
+        "type": 1,
+        "expirationTime": 1697364534,
+        "timestamp": 1697283299
+      },
+      {
+        "cid": "bafyreib5mvzyxxgk75zdllmpiiwj5pd6lgaqhtivpoz43b52bkudzlcfqq",
+        "type": 2,
+        "timestamp": 1697283299
       }
     ],
+    "anchorProof": {
+      "root": "bafyreibmk7nssvoooxov3dbofafl3maxed2yeiu2wgx32x5rnkir3dtra4",
+      "txHash": "bagjqcgzazybvpyy5r2uoekmmahkcctl2dawq3lfzyakgfnytuholfdq5lnna",
+      "txType": "f(bytes32)",
+      "chainId": "eip155:1"
+    },
     "doctype": "tile"
   }
 }
